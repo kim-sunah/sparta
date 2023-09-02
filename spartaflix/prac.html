@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>자바스크립트 문법 연습하기!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,7 +11,18 @@
     }
 </style>
 <script>
-
+    // function checkResult(){
+    //     $('#q1').text('쥬라기월드');
+    // }
+    let a = ['사과', '배', '감', '귤']
+    $('#q1').text(a[2]);
+    let b = {'name' : '영수','age' : 30}
+    $('#q2').text(b['name']);
+    let c = [
+        {'name':'영수', 'age':30},
+        {'name':'철수', 'age':35}
+    ]
+    $('#q3').text(c[1]['name']);
 </script>
 <body>
 <div class="top-part">
