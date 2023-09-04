@@ -22,6 +22,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+$("#postingbtn").click(async function () {
+    // let doc = {'name': 'bob','age': 30};
+    let image = $('#image').val();
+    let title = $('#title').val();
+    let content = $('#content').val();
+    let date = $('#date').val();
+
+    let doc = {
+        'image': image,
+        'title': title,
+        'content':content,
+        'date':date
+    }
+
+    await addDoc(collection(db, "albums"), doc);
+})
 
 function openClose() {
     $('#postingBox').toggle();
