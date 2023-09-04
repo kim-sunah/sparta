@@ -37,11 +37,13 @@ $("#postingbtn").click(async function () {
     }
 
     await addDoc(collection(db, "albums"), doc);
+    alert('저장 완료!');
+    window.location.reload();
 })
 
-function openClose() {
+$("#memory_save").click(async function () {
     $('#postingBox').toggle();
-}
+})
 function makeCard() {
     let image = $('#image').val();
     let title = $('#title').val();
