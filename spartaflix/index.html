@@ -63,44 +63,7 @@
             width: 100%;
         }
     </style>
-    <script>
-        $(document).ready(function () {
-            let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-            fetch(url).then(res => res.json()).then(data => {
-                let temp = data['temp']
-                if (temp >20){
-                    $('#do').text("더워요");
-                }else{
-                    $('#do').text("추워요");
-                }
-                // $('#do').text(temp);
-            })
-        })
-
-        function open_colse() {
-            $('#postingBox').toggle();
-        }
-        function makeCard() {
-            let image = $('#image').val();
-            let title = $('#title').val();
-            let comment = $('#comment').val();
-            let star = $('#star').val();
-
-            let temp_html = `
-            <div class="col">
-            <div class="card h-100">
-                <img src="${image}" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${title}</h5>
-                    <p class="card-text">${star}</p>
-                    <p class="card-text">${comment}</p>
-                </div>
-            </div>
-        </div>`;
-            $('#card').append(temp_html);
-
-        }
-    </script>
+    <script src="index.js" type="module"></script>
 </head>
 
 <body>
@@ -119,7 +82,7 @@
                     <li><a href="#" class="nav-link px-2 text-white">시리즈</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">영화</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">내가 찜한 콘텐츠</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">현재 기온 : <span id = "do"></span></a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">현재 기온 : <span id="do"></span></a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -140,7 +103,7 @@
             <p class="col-md-8 fs-4">병든 왕을 둘러싸고 흉흉한 소문이 떠돈다. 어둠에 뒤덮인 조선, 기이한 역병에 신음하는 산하. 정체 모를 악에 맞서 백성을 구원할 희망은 오직
                 세자뿐이다.</p>
 
-            <button onclick="open_colse()" type="button" class="btn btn-outline-light">영화기록하기</button>
+            <button id="memory_save" type="button" class="btn btn-outline-light">영화기록하기</button>
             <button type="button" class="btn btn-outline-light">상세정보</button>
         </div>
     </div>
@@ -170,7 +133,7 @@
             <label for="floatingInput">추천 이유</label>
         </div>
 
-        <button onclick="makeCard()" type="button" class="btn btn-danger">기록하기</button>
+        <button id="postingbtn" type="button" class="btn btn-danger">기록하기</button>
     </div>
     <div class="mycards">
         <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
