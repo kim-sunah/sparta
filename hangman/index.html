@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hangman</title>
+    <title>Document</title>
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css.css">
+
 <body>
-
-
-    <div class="wrapper">
-        <h1>Hangman</h1>
-         <h2>Vanilla JavaScript Hangman Game</h2>
-         <p>알파벳을 클릭해주세요</p>
-     </div>
-     <div class="wrapper">
-         <div id="buttons">
-         </div>  
-         <p id="catagoryName"></p>
-         <div id="hold">
-         </div>
-         <p id="mylives"></p>
-         <p id="clue">Clue -</p>  
-          <img class="hangmanImg" src="image/1.png">
-         <div class="container">
-           <button id="hint">Hint</button>
-           <button id="reset">Play again</button>
-         </div>
-     </div>
-    
-    <script src="index.js"></script>
+    <div id="choiceform">
+        <button id="fruit" onclick='start(0)'>과일</button>
+        <button id="develop" onclick='start(1)'>개발</button>
+        <button id="animal" onclick='start(2)'>동물</button>
+    </div>
+    <div id="gamestart">
+        <div id="hangman">
+            <div class="wrapper">
+                <h1>Hangman</h1>
+                <p>아래의 알파벳을 사용하여 단어를 맞춰주세요</p>
+                <p id="catagoryName"></p>
+                <div id="hold"></div>
+            </div>
+            <div class="wrapper">
+                <div id="buttons"></div>
+                <img id="stickman" src="image/0.png" />
+                <p id="mylives"></p>
+                <div class="container">
+                    <button id="reset">Play again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="hangman.js"></script>
 </body>
+
 </html>
