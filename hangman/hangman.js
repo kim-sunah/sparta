@@ -127,6 +127,7 @@ function start(choice){
       var j = (word.indexOf(geuss));
       if (lives !=  0) {
         if (j === -1) {
+          this.setAttribute("style", "color : red;")
           lives -= 1;
           comments();
           animate();
