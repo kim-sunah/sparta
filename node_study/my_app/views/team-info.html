@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <div class="left-div">
+        <div class="left-div-top">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <header class="Introduction_header">
+                            <h1 class="Introduction_h1">Team Promise </h1>
+                        </header>
+                        <div>
+                            <div class="Introduction_div">
+                                <div class="alert alert-primary" role="alert"> 지각 하지 않기 </div>
+                                <div class="alert alert-secondary" role="alert"> 1시간정도 해보고 모르겠다면
+                                    물어보기 </div>
+                                <div class="alert alert-success" role="alert"> 포기하지 않기 </div>
+                                <div class="alert alert-danger" role="alert"> 회의시간 지키기 </div>
+                                <div class="alert alert-warning" role="alert"> 가족같은 분위기~^^♡
+                                </div>
+                                <div class="alert alert-info" role="alert"> 회의 때 의견 활발하게 공유하기
+                                </div>
+                                <div class="alert alert-light" role="alert"> 복습 잘하기 </div>
+                                <div class="alert alert-dark" role="alert"> T 발언 하지 않기 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active">
+                        <header class="Introduction_header">
+                            <h1 class="team-info-header">Team Goals </h1>
+                        </header>
+                        <div class="carousel-item_div">
+                            <div class="alert alert-primary" role="alert">태영 : 복습 잘하고 각자의 역할을
+                                잘하는 팀 </div>
+                            <div class="alert alert-secondary" role="alert">선아 : 아프지말고 끝가지 건강히
+                                수료하기</div>
+                            <div class="alert alert-success" role="alert">유덕 : 실력을 쌓아서 외주를 맡을 수
+                                있는 수준이 될수 있는 팀!</div>
+                            <div class="alert alert-danger" role="alert">지원 : 소통잘하고 서로맡은 일에 최선을
+                                다하는 팀!</div>
+                            <div class="alert alert-warning" role="alert"> 윤찬 : 프로젝트를 거듭할수록
+                                발전해나가는 팀! </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="left-div-bottom">
+            <div class="bottom-box" id="today-area">
+                <form action="/team-info" method="post">
+                    <input name="comment" type="text" placeholder="따뜻한 응원 한마디 부탁드려요~"></input>
+                    <button id="postingbtn" type="submit" class="commentBtn">보내기</button>
+                </form>
+                {% if list %}
+                {% for comments in list %}
+                <li>
+                    <div>{{ comments.date }}</div>
+                    <div >{{ comments.comment }}</div>
+                    <form action="/delete/{{ comments.id }}" method="post">
+                        <input type="submit" value="삭제">
+                    </form>
+                </li>
+                {% endfor %}
+                {% else %}
+                <p> 작성된 글이 없습니다.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class=right-div>
+        <div class="right-div-side">
+            <div class="add-day" onclick="window.open('https://link.kakaopay.com/_/h8iAqBg')">
+                <i id="money">응애 돈줘</i>
+            </div>
+
+
+            <div class="calendar">
+                <!-- 연도, 월 -->
+                <nav class="calendar-yearmonth">
+                    <div class="calendar-yearmonth__btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="calendar-yearmonth__col"></div>
+                    <div class="calendar-yearmonth__btn">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </nav>
+                <!-- 요일 -->
+                <div class="calendar-days">
+                    <div class="calendar-day"><span>S</span></div>
+                    <div class="calendar-day"><span>M</span></div>
+                    <div class="calendar-day"><span>T</span></div>
+                    <div class="calendar-day"><span>W</span></div>
+                    <div class="calendar-day"><span>T</span></div>
+                    <div class="calendar-day"><span>F</span></div>
+                    <div class="calendar-day"><span>S</span></div>
+                </div>
+                <!-- 일자 -->
+                <div class="calendar-date"></div>
+            </div>
+
+            <!-- 아래에 결과를 표시할 ul 태그 추가 -->
+            <ul id="resultList"></ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

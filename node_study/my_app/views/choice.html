@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <div class="left-div">
+        <div class="left-div-top">
+            <h1>이게 왜 되조 입니다</h1>
+            <div class="choice-div">
+                <div onclick="location.href='/team-info'"  class="alert alert-danger" role="alert">TEAM INFO</div>
+                <div onclick="location.href='/member-info'"  class="alert alert-warning" role="alert">MEMBER INFO </div>
+            </div>
+        </div>
+        <div class="left-div-bottom">
+            <div class="weather">
+                <div class="today-info">
+                    <div class="today-info__date"></div>
+                    <div class="today-info__ampm"></div>
+                </div>
+                <div class="weather-info">
+                    <div class="weather-info__city-info">
+                        <div class="weather-info__city-info__city">No weather</div>
+                        <div class="weather-info__city-info__temp">-- --</div>
+                    </div>
+                    <div class="weather-info__main-weather">
+                        <img src="img/weather/default.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="clock">
+                <div class="clock-hours">
+                    <div class="clock-inner"><span id="h1"></span></div>
+                    <div class="clock-inner"><span id="h2"></span></div>
+                </div>
+                <div class="clock-minutes">
+                    <div class="clock-inner"><span id="m1"></span></div>
+                    <div class="clock-inner"><span id="m2"></span></div>
+                </div>
+                <div class="clock-seconds">
+                    <div class="clock-inner"><span id="s1"></span></div>
+                    <div class="clock-inner"><span id="s2"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=right-div>
+        <div class="right-div-side">
+            <div class="add-day" onclick="window.open('https://link.kakaopay.com/_/h8iAqBg')">
+                <i id="money">응애 돈줘</i>
+              </div>
+      
+            <div class="calendar">
+                <!-- 연도, 월 -->
+                <nav class="calendar-yearmonth">
+                  <div class="calendar-yearmonth__btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </div>
+                  <div class="calendar-yearmonth__col"></div>
+                  <div class="calendar-yearmonth__btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </nav>
+                <!-- 요일 -->
+                <div class="calendar-days">
+                  <div class="calendar-day"><span>S</span></div>
+                  <div class="calendar-day"><span>M</span></div>
+                  <div class="calendar-day"><span>T</span></div>
+                  <div class="calendar-day"><span>W</span></div>
+                  <div class="calendar-day"><span>T</span></div>
+                  <div class="calendar-day"><span>F</span></div>
+                  <div class="calendar-day"><span>S</span></div>
+                </div>
+                <!-- 일자 -->
+                <div class="calendar-date"></div>
+              </div>
+        </div>
+    </div>
+</main>
+
+<script src="/js/clock-weather.js"></script>
+{% endblock %}

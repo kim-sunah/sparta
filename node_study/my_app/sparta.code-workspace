@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../Downloads/nodejs-book-master/ch9"
+		},
+		{
+			"path": "../../../../Downloads/nodejs-book-master/ch17"
+		},
+		{
+			"path": "../../../../Downloads/nodejs-book-master/ch10"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502
+	}
+}

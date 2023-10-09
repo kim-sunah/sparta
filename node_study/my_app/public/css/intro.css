@@ -1,0 +1,17 @@
+.intro {
+    position:relative;
+    width: 100%;
+}
+
+.intro-box {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.intro-box > h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    font-weight: bold;
+}
