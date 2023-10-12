@@ -93,7 +93,6 @@ app.get('/member-info', async (req, res) => {
 
 app.get('/member/:id', async (req, res) => {
     const memberId = req.params.id;
-    console.log(memberId);
     const memberInfo = await Members.findOne({ id: memberId }); // 해당 ID의 멤버 정보를 가져오도록 수정
     if (!memberInfo) {
         return res.status(404).send('Member not found');
@@ -101,7 +100,6 @@ app.get('/member/:id', async (req, res) => {
 
     const browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
-    console.log(memberInfo.blog);
     const url = memberInfo.blog;
     await page.goto(url);
     const content = await page.content();
