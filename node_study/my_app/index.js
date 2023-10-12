@@ -110,7 +110,7 @@ app.get('/member/:id', async (req, res) => {
     if (memberId == 1) {
         $(".list").find('li').each((index, element) => {
             if (index) {
-                const href = memberInfo.blog + $(element).find('a').attr('href'); 
+                const href = memberInfo.blog + $(element).find('a').attr('href');
                 const title = $(element).find('a').text().trim();
                 const date = $(element).find('.date').text().trim();
                 latestPosts.push({ title, date, href });
@@ -124,7 +124,7 @@ app.get('/member/:id', async (req, res) => {
     } else if (memberId == 2) {
         $('.list_horizontal').find('li').each((index, element) => {
             if (index) {
-                const href = memberInfo.blog + $(element).find('a').attr('href'); 
+                const href = memberInfo.blog + $(element).find('a').attr('href');
                 const title = $(element).find('.title_post').text().trim();
                 const date = $(element).find('.date').text().trim();
                 latestPosts.push({ title, date, href });
@@ -138,36 +138,36 @@ app.get('/member/:id', async (req, res) => {
         $('.list_article').find('li').each((index, element) => {
             console.log(index);
             if (index) {
-                const href = memberInfo.blog + $(element).find('a').attr('href'); 
+                const href = memberInfo.blog + $(element).find('a').attr('href');
                 const title = $(element).find('.txt_thumb').text().trim();
                 const date = $(element).find('.date').text().trim();
                 latestPosts.push({ title, date, href });
             }
         });
         // 결과 출력
-        
+
     } else if (memberId == 4) {
         $('.area-common').find('article').each((index, element) => {
             if (index) {
-                const href = memberInfo.blog + $(element).find('a').attr('href'); 
+                const href = memberInfo.blog + $(element).find('a').attr('href');
                 const title = $(element).find('.title').text().trim();
                 const date = $(element).find('.date').text().trim();
                 latestPosts.push({ title, date, href });
             }
         });
         // 결과 출력
-       
-    }else if (memberId == 5) {
+
+    } else if (memberId == 5) {
         $('.area-common').find('article').each((index, element) => {
             if (index) {
-                const href = memberInfo.blog + $(element).find('a').attr('href'); 
+                const href = memberInfo.blog + $(element).find('a').attr('href');
                 const title = $(element).find('.title').text().trim();
                 const date = $(element).find('.date').text().trim();
                 latestPosts.push({ title, date, href });
             }
         });
         // 결과 출력
-        
+
     }
     let postListHtml = '<ul>';
     latestPosts.forEach((post) => {
